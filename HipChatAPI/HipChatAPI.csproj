@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADFF766C-799E-4628-A292-7CFD3ACBD800}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HipChatAPI</RootNamespace>
+    <AssemblyName>HipChatAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HipChat.cs" />
+    <Compile Include="IHipChat.cs" />
+    <Compile Include="Model\HipChatColor.cs" />
+    <Compile Include="Model\HipChatFile.cs" />
+    <Compile Include="Model\HipChatItem.cs" />
+    <Compile Include="Model\HipChatLink.cs" />
+    <Compile Include="Model\HipChatMessage.cs" />
+    <Compile Include="Model\HipChatMessageFormat.cs" />
+    <Compile Include="Model\HipChatMessageLink.cs" />
+    <Compile Include="Model\HipChatMessageType.cs" />
+    <Compile Include="Model\HipChatRoom.cs" />
+    <Compile Include="Model\HipChatRoomEvent.cs" />
+    <Compile Include="Model\HipChatRoomPrivacy.cs" />
+    <Compile Include="Model\HipChatStatistic.cs" />
+    <Compile Include="Model\HipChatTimeZone.cs" />
+    <Compile Include="Model\HipChatUser.cs" />
+    <Compile Include="Model\HipChatUserClient.cs" />
+    <Compile Include="Model\HipChatUserPresence.cs" />
+    <Compile Include="Model\HipChatUserShow.cs" />
+    <Compile Include="Model\HipChatWebhook.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\Room\HipChatCreateRoomRequest.cs" />
+    <Compile Include="Request\Room\HipChatCreateWebhookRequest.cs" />
+    <Compile Include="Request\Room\HipChatDeleteRoomRequest.cs" />
+    <Compile Include="Request\Room\HipChatGetAllMembersRequest.cs" />
+    <Compile Include="Request\Room\HipChatGetAllParticipantsRequest.cs" />
+    <Compile Include="Request\Room\HipChatGetAllRoomsRequest.cs" />
+    <Compile Include="Request\Room\HipChatGetAllWebhooksRequest.cs" />
+    <Compile Include="Request\Room\HipChatGetRoomMessageRequest.cs" />
+    <Compile Include="Request\Room\HipChatGetRoomRequest.cs" />
+    <Compile Include="Request\Room\HipChatReplyToMessageRequest.cs" />
+    <Compile Include="Request\Room\HipChatSendRoomNotificationRequest.cs" />
+    <Compile Include="Request\Room\HipChatSetTopicRequest.cs" />
+    <Compile Include="Request\Room\HipChatShareFileWithRoomRequest.cs" />
+    <Compile Include="Request\Room\HipChatShareLinkWithRoomRequest.cs" />
+    <Compile Include="Request\Room\HipChatUpdateRoomRequest.cs" />
+    <Compile Include="Request\Room\HipChatViewRecentRoomHistoryRequest.cs" />
+    <Compile Include="Request\Room\HipChatViewRoomHistoryRequest.cs" />
+    <Compile Include="Request\User\HipChatCreateUserRequest.cs" />
+    <Compile Include="Request\User\HipChatGetAllUsersRequest.cs" />
+    <Compile Include="Request\User\HipChatGetAutoJoinRoomsRequest.cs" />
+    <Compile Include="Request\User\HipChatGetPrivateChatMessageRequest.cs" />
+    <Compile Include="Request\User\HipChatInviteUserRequest.cs" />
+    <Compile Include="Request\User\HipChatPrivateMessageUserRequest.cs" />
+    <Compile Include="Request\User\HipChatShareFileWithUserRequest.cs" />
+    <Compile Include="Request\User\HipChatShareLinkWithUserRequest.cs" />
+    <Compile Include="Request\User\HipChatUpdatePhotoRequest.cs" />
+    <Compile Include="Request\User\HipChatUpdateUserRequest.cs" />
+    <Compile Include="Request\User\HipChatViewRecentPrivateChatHistoryRequest.cs" />
+    <Compile Include="Response\Room\HipChatCreateRoomResponse.cs" />
+    <Compile Include="Response\Room\HipChatCreateWebhookResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetAllMembersResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetAllParticipantsResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetAllRoomsResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetAllWebhooksResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetRoomMessageResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetRoomResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetRoomStatisticsResponse.cs" />
+    <Compile Include="Response\Room\HipChatGetWebhookResponse.cs" />
+    <Compile Include="Response\Room\HipChatViewRecentRoomHistoryResponse.cs" />
+    <Compile Include="Response\Room\HipChatViewRoomHistoryResponse.cs" />
+    <Compile Include="Response\User\HipChatCreateUserResponse.cs" />
+    <Compile Include="Response\User\HipChatGetAllUsersResponse.cs" />
+    <Compile Include="Response\User\HipChatGetAutoJoinRoomsResponse.cs" />
+    <Compile Include="Response\User\HipChatGetPrivateChatMessageResponse.cs" />
+    <Compile Include="Response\User\HipChatViewRecentPrivateChatHistoryResponse.cs" />
+    <Compile Include="Response\User\HipChatViewUserResponse.cs" />
+    <Compile Include="Utils\ArgumentHelper.cs" />
+    <Compile Include="Utils\HipChatCharLimits.cs" />
+    <Compile Include="Utils\HipChatResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
